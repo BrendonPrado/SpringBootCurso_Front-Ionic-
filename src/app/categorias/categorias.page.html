@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-toggle>
+      <ion-icon name="menu"></ion-icon>
+    </ion-menu-toggle>
+    <ion-title>Categorias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-list>
+      <ion-item button *ngFor="let cat of categorias">
+          <ion-thumbnail slot="start">
+              <img  src="https://www.pngarts.com/files/1/Cafe-Espresso-PNG-Free-Download.png" >
+          </ion-thumbnail>
+          <ion-text class="ion-text-capitalize">{{ cat.nome }}</ion-text>
+      </ion-item>
+  </ion-list>
+</ion-content>
