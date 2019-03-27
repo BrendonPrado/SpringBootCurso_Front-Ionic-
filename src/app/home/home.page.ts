@@ -27,12 +27,23 @@ export class HomePage {
   ionViewWillLeave() {
     this.menuCtrl.enable(true);
   }
+  ionViewDidEnter() {
+    this.auth.refreshToken()
+        .subscribe(response => {
+      this.auth.succesfulLogin(response.headers.get('Authorization'));
+      this.router.navigate(['/categorias']);
+    },
+                error => console.log(error));
+  }
 
   logar() {
-    this.auth.authenticate(this.creds).subscribe(response => {
+    this.auth.authenticate(this.creds)
+        .subscribe(response => {
       this.auth.succesfulLogin(response.headers.get('Authorization'));
-    }, error => console.log(error));
-    this.router.navigate(['/categorias']);
+      this.router.navigate(['/categorias']);
+
+      }
+      , error => console.log(error));
   }
 
 

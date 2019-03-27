@@ -13,6 +13,8 @@ import {CategoriaService} from '../service/domain/categoria.service';
 import {ErrorInterceptorProvider} from '../interceptors/error-interceptor';
 import {AuthService} from '../service/auth.service';
 import {StorageService} from '../service/storage.service';
+import {ClienteService} from '../service/cliente.service';
+import {AuthInterceptorProvider} from '../interceptors/auth-interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,11 +27,13 @@ import {StorageService} from '../service/storage.service';
   ],
   providers: [
     CategoriaService,
-      AuthService,
+    AuthService,
     StatusBar,
     SplashScreen,
-    ErrorInterceptorProvider,
     StorageService,
+    ClienteService,
+    AuthInterceptorProvider,
+    ErrorInterceptorProvider,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

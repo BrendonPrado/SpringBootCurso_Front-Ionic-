@@ -1,9 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>page-profile</ion-title>
+    <ion-menu-toggle>
+      <ion-icon name="menu"></ion-icon>
+    </ion-menu-toggle>
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
+      <img class="circle"  [src]="cliente?.imageUrl || 'assets/images/índice.jpeg'" alt="imagem cliente">
+    <h2 text-center>{{cliente?.nome}}</h2>
+    <p text-center>{{cliente?.email}}</p>
 
 </ion-content>
